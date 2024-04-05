@@ -1,3 +1,31 @@
 {
-  "products": []
+  "products": [
+    {
+      "name": "Product 1",
+      "Price": "10.99",
+      "image": "prodcuct1.img",
+      "description": "This is product 1",
+      "discount": "2",
+      "quantity": "100",
+      "featured": true
+    },
+    {
+      "name": "Product2",
+      "Price": "15.2",
+      "image": "prodcuct2.img",
+      "description": "This is product 2",
+      "discount": "0.4",
+      "quantity": "50",
+      "featured": true
+    },
+    {
+      "name": "Product 3",
+      "Price": "14",
+      "image": "prodcuct3.img",
+      "description": "This is product 3",
+      "discount": "2",
+      "quantity": "200",
+      "featured": false
+    }
+  ]
 }
