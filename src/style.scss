@@ -61,8 +61,7 @@ img {
             display: flex;
         }
     }
-    &__item {
-    }
+  
     &__link {
         font-size: 18px;
         display: block;
@@ -70,10 +69,12 @@ img {
         text-decoration: none;
         color: #000;
     }
-    &__link:hover {
+    &__:hover,
+    &__link.active {
         background: #000;
         color: #fff;
     }
+    
 }
 
 // BANNER

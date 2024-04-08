@@ -1,37 +1,38 @@
 import Logo from "@/assets/logo.svg";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="container">
         <div className="header-inner">
-          <a href="#" className="header__logo">
+          <Link to="/" className="header__logo">
             <img src={Logo} alt="#" />
-          </a>
+          </Link>
           <div className="button-mobile">
             <button>=</button>
           </div>
           <nav className="main-menu">
             <ul className="main-menu__list">
               <li className="main-menu__item">
-                <a href="#" className="main-menu__link">
+                <NavLink to="/" className="main-menu__link">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="main-menu__item">
-                <a href="./shop.html" className="main-menu__link">
+                <NavLink to="/shop" className="main-menu__link">
                   Shop
-                </a>
+                </NavLink>
               </li>
               <li className="main-menu__item">
-                <a href="#" className="main-menu__link">
+                <NavLink to="/about" className="main-menu__link">
                   About
-                </a>
+                </NavLink>
               </li>
               <li className="main-menu__item">
-                <a href="#" className="main-menu__link">
+                <NavLink to="contact" className="main-menu__link">
                   Contact
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>

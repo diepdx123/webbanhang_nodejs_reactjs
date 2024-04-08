@@ -2,28 +2,28 @@
   "products": [
     {
       "name": "Product 1",
-      "Price": "10.99",
-      "image": "prodcuct1.img",
+      "price": "1000",
+      "image": "https://picsum.photos/id/10/300/300",
       "description": "This is product 1",
-      "discount": "2",
+      "discount": "30",
       "quantity": "100",
       "featured": true
     },
     {
       "name": "Product2",
-      "Price": "15.2",
-      "image": "prodcuct2.img",
+      "price": "1999",
+      "image": "https://picsum.photos/id/16/300/300",
       "description": "This is product 2",
-      "discount": "0.4",
+      "discount": "20",
       "quantity": "50",
       "featured": true
     },
     {
       "name": "Product 3",
-      "Price": "14",
-      "image": "prodcuct3.img",
+      "price": "700",
+      "image": "https://picsum.photos/id/17/300/300",
       "description": "This is product 3",
-      "discount": "2",
+      "discount": "5",
       "quantity": "200",
       "featured": false
     }

@@ -1,6 +1,6 @@
+import { IProduct } from "@/interfaces/product";
 import { getAllProducts } from "@/services/product";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
 
 const New = () => {
   const {
@@ -11,8 +11,11 @@ const New = () => {
     queryKey: ["PRODUCT_KEY"],
     queryFn: getAllProducts,
   });
+
   if (isLoading) return <p>loading.....</p>;
+
   if (isError) return <p>error</p>;
+
   return (
     <section className="news">
       <div className="container">
@@ -21,29 +24,34 @@ const New = () => {
         </div>
         <div className="section-body">
           <div className="product-list">
-            {products?.map((product, index) => {
+            {products?.map((product: IProduct, index: number) => {
               return (
-                <div className="product-item">
+                <div key={index} className="product-item">
                   <div className="product-image">
                     <img
-                      src="https://picsum.photos/id/10/300/300"
+                      src={product?.image}
                       alt="#"
                       className="product__thumbnail"
                     />
-                    <span className="product-sale">30%</span>
+                    <span className="product-sale">{product?.discount}%</span>
                   </div>
                   <div className="product-info">
                     <h3 className="product__name">
                       <a href="#" className="product__link">
-                        Syltherine
+                        {product?.name}
                       </a>
                     </h3>
                     <a href="#" className="product__category">
                       Stylish cafe chair
                     </a>
                     <div className="product-price">
-                      <span className="product-price__new">$200</span>
-                      <span className="product-price__old">$300</span>
+                      <span className="product-price__new">
+                        {product?.price -
+                          product?.price * (product?.discount / 100)}
+                      </span>
+                      <span className="product-price__old">
+                        {product?.price}
+                      </span>
                     </div>
                   </div>
                   <div className="product-actions">
