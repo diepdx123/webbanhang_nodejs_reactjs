@@ -30,7 +30,7 @@ const Header = () => {
                 </NavLink>
               </li>
               <li className="main-menu__item">
-                <NavLink to="contact" className="main-menu__link">
+                <NavLink to="/contact" className="main-menu__link">
                   Contact
                 </NavLink>
               </li>

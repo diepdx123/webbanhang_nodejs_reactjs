@@ -2,8 +2,7 @@ import {
   Banner,
   Blog,
   Footer,
-  Header,
-  New,
+  ProductList,
   Services,
   Shop,
 } from "@/components";
@@ -11,9 +10,8 @@ import {
 const HomePage = () => {
   return (
     <>
-      <Header />
       <Banner />
-      <New />
+      <ProductList featured={true} />
       <div className="container">
         <hr />
       </div>

@@ -1,10 +1,9 @@
-import { Header, New } from "@/components";
+import { ProductList } from "@/components";
 
 const ShopPage = () => {
   return (
     <div>
-      <Header />
-      <New />
+      <ProductList />
     </div>
   );
 };

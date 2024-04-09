@@ -1,15 +1,17 @@
 {
   "products": [
     {
+      "id": 1,
       "name": "Product 1",
       "price": "1000",
       "image": "https://picsum.photos/id/10/300/300",
       "description": "This is product 1",
       "discount": "30",
       "quantity": "100",
-      "featured": true
+      "featured": false
     },
     {
+      "id": 2,
       "name": "Product2",
       "price": "1999",
       "image": "https://picsum.photos/id/16/300/300",
@@ -19,6 +21,7 @@
       "featured": true
     },
     {
+      "id": 3,
       "name": "Product 3",
       "price": "700",
       "image": "https://picsum.photos/id/17/300/300",

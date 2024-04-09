@@ -10,3 +10,12 @@ export const getAllProducts = async (): Promise<IProduct[]> => {
     return [];
   }
 };
+
+export const getProductById = async (id: number | string) => {
+  try {
+    const response = await instance.get(`/products/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -1,8 +1,13 @@
 import { IProduct } from "@/interfaces/product";
 import { getAllProducts } from "@/services/product";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
-const New = () => {
+type ProductListProps = {
+  featured?: boolean;
+};
+
+const ProductList = ({ featured }: ProductListProps) => {
   const {
     data: products,
     isLoading,
@@ -12,6 +17,9 @@ const New = () => {
     queryFn: getAllProducts,
   });
 
+  const filteredProducts = featured
+    ? products?.filter((product: IProduct) => product?.featured == featured)
+    : products;
   if (isLoading) return <p>loading.....</p>;
 
   if (isError) return <p>error</p>;
@@ -24,7 +32,7 @@ const New = () => {
         </div>
         <div className="section-body">
           <div className="product-list">
-            {products?.map((product: IProduct, index: number) => {
+            {filteredProducts?.map((product: IProduct, index: number) => {
               return (
                 <div key={index} className="product-item">
                   <div className="product-image">
@@ -37,9 +45,12 @@ const New = () => {
                   </div>
                   <div className="product-info">
                     <h3 className="product__name">
-                      <a href="#" className="product__link">
+                      <Link
+                        to={`/products/${product.id}`}
+                        className="product__Link"
+                      >
                         {product?.name}
-                      </a>
+                      </Link>
                     </h3>
                     <a href="#" className="product__category">
                       Stylish cafe chair
@@ -55,9 +66,13 @@ const New = () => {
                     </div>
                   </div>
                   <div className="product-actions">
-                    <button className="btn product-action__quickview">
+                    <Link
+                      to={`/products/${product.id}`}
+                      className="btn product-action__quickview"
+                    >
                       Quick View
-                    </button>
+                    </Link>
+
                     <button className="btn product-action__addtocart">
                       Add To Cart
                     </button>
@@ -76,4 +91,4 @@ const New = () => {
     </section>
   );
 };
-export default New;
+export default ProductList;
